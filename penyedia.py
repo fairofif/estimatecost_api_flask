@@ -30,7 +30,7 @@ def getsalary(city,rolefirst,rolelast,exp,seniorlvl):
         arrParameter += [str(seniorlvl)]
         arrPositionParameter += [5]
 
-    queryselect = 'select min(salary) as min_salary, max(salary) as max_salary, avg(salary) as avg_salary FROM ( (SELECT City, (this_year_brutto+this_year_bonus) as salary FROM salariesIT WHERE'
+    queryselect = 'select (min(salary)*1.07) as min_salary_usd, (max(salary)*1.07) as max_salary_usd, (avg(salary)*1.07) as avg_salary_usd FROM ( (SELECT City, (this_year_brutto+this_year_bonus) as salary FROM salariesIT WHERE'
     queryclose = ') as t1 )'
     querycondition = ""
     for i in range(len(arrParameter)):
@@ -41,7 +41,7 @@ def getsalary(city,rolefirst,rolelast,exp,seniorlvl):
         if arrPositionParameter[i] == 2:
             if i != 0:
                 querycondition = querycondition + " and "
-            querycondition = querycondition + "  Position like '" + arrParameter[i] + " %' "
+            querycondition = querycondition + "  Position like '" + arrParameter[i] + "%' "
         if arrPositionParameter[i] == 3:
             if i != 0:
                 querycondition = querycondition + " and "
@@ -106,7 +106,7 @@ def getvacationdays(city,rolefirst,rolelast,exp,seniorlvl):
         if arrPositionParameter[i] == 2:
             if i != 0:
                 querycondition = querycondition + " and "
-            querycondition = querycondition + "  Position like '" + arrParameter[i] + " %' "
+            querycondition = querycondition + "  Position like '" + arrParameter[i] + "%' "
         if arrPositionParameter[i] == 3:
             if i != 0:
                 querycondition = querycondition + " and "
