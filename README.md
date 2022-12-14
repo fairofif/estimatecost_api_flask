@@ -4,7 +4,7 @@ For END USER:
 
 Untuk mendapatkan token login tokenvalue:
 
-https://wakacipuy.my.id/estimatecost/login (gunakan username = 'mainaccount', password = 'mainaccount')
+https://wakacipuy.my.id/estimatecost/thislogin (gunakan username = 'mainaccount', password = 'mainaccount')
 
 Estimasi biaya hidup, gaji, uang sisa, berdasarkan kota, role, pengalaman, lifestyle:
 
